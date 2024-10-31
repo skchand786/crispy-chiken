@@ -1,0 +1,48 @@
+{% extends "base.html" %}
+
+{% block title %}Projects - 𝓜𝓸𝓸𝓷 ❀{% endblock %}
+
+{% block content %}
+<div class="projects-section">
+    <h1>My Projects</h1>
+    <div class="projects-grid">
+        <div class="project-box animate-box">
+            <h2>Agriculture Using AI</h2>
+            <p>An AI-powered project to revolutionize agriculture.</p>
+        </div>
+        <div class="project-box animate-box">
+            <h2>Moon Network Tunnel Using Java</h2>
+            <p>Created a Vpn Tunnel Using Java Programming.</p>
+        </div>
+        <div class="project-box animate-box">
+            <h2>Comming Soon</h2>
+            <p>Comming Soon.</p>
+        </div>
+        <div class="project-box animate-box">
+            <h2>Comming Soon</h2>
+            <p>Comming Soon.</p>
+        </div>
+        <div class="project-box animate-box">
+            <h2>Comming Soon</h2>
+            <p>Comming Soon.</p>
+        </div>
+        <div class="project-box animate-box">
+            <h2>Comming Soon</h2>
+            <p>Comming Soon.</p>
+        </div>
+    </div>
+</div>
+
+<!-- Footer -->
+<footer>
+    <p>Coded by <span>𐌑ᴏᴏɴ</span> using <span>Flask & Python</span></p>
+    <p>© 2024 𐌑ᴏᴏɴ 𐌏ᴘ</p>
+</footer>
+
+<script>
+    // Add animation delay to each project box
+    document.querySelectorAll('.project-box').forEach((box, index) => {
+        box.style.transitionDelay = `${index * 0.2}s`;
+    });
+</script>
+{% endblock %}
