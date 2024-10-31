@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+
+{% block title %}Contact - 𝓜𝓸𝓸𝓷 ❀{% endblock %}
+
+{% block content %}
+<div class="contact-section">
+    <h1 class="contact-title">Contact Me</h1>
+
+    <div class="contact-grid">
+        <div class="contact-box">
+            <h2>Instagram Profile</h2>
+            <p><strong>Name:</strong> 𝐀𝐌𝐎𝐍 چاند ٭ ☪︎</p>
+            <p><strong>Username:</strong> @chand.official_</p>
+            <p><strong>User ID:</strong> DON'T KNOW</p>
+        </div>
+
+        <div class="contact-box">
+            <h2>Telegram Profile</h2>
+            <p><strong>Name:</strong> 𝙈𝙊𝙊𝙉 ٭ ᶠᵘᵉᵍᵒ </p>
+            <p><strong>Username:</strong> @Moon78692</p>
+            <p><strong>User ID:</strong> DON'T KNOW</p>
+        </div>
+    </div>
+</div>
+{% endblock %}
