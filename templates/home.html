@@ -3,6 +3,131 @@
 {% block title %}Home - My Professional Portfolio{% endblock %}
 
 {% block content %}
+<style>
+    /* HERO: align content to the left while keeping background full width */
+    .hero-section {
+        display: flex;
+        align-items: center;        /* vertically center content in hero */
+        justify-content: flex-start;/* push content to left */
+        min-height: 72vh;          /* adjust as needed */
+        padding: 40px 0;
+        position: relative;
+        /* If your background image is applied to .hero-section in your main CSS, this will sit on top.
+           Otherwise you can set a background-image here:
+           background-image: url('/static/images/hero-bg.jpg');
+           background-size: cover;
+           background-position: center;
+        */
+    }
+
+    .hero-section .intro {
+        max-width: 740px;          /* limits width of the text block so it doesn't span full screen */
+        margin-left: 40px;         /* distance from the left edge; reduce to move further left */
+        color: #e9eef2;
+        text-align: left;
+        z-index: 2;
+        /* optional subtle backdrop for legibility when background is busy */
+        background: rgba(0,0,0,0.20);
+        padding: 18px 22px;
+        border-radius: 8px;
+    }
+
+    .hero-section .intro h1 {
+        font-size: 3.8rem;
+        margin: 0 0 10px 0;
+        color: #ffffff;
+        text-shadow: 0 3px 12px rgba(0,0,0,0.6);
+        line-height: 1.02;
+    }
+
+    .hero-section .intro h1 #bruteforce-name {
+        color: #00ffd1; /* final color after animation; script also sets color */
+    }
+
+    .hero-section .intro p {
+        font-size: 1.05rem;
+        line-height: 1.6;
+        color: rgba(255,255,255,0.92);
+        margin: 8px 0 14px 0;
+    }
+
+    .buttons {
+        margin-top: 14px;
+        display: flex;
+        gap: 14px;
+        align-items: center;
+        flex-wrap: wrap;
+    }
+
+    .btn {
+        background: #00ff88;
+        color: #0b0b0b;
+        padding: 12px 20px;
+        border-radius: 28px;
+        text-decoration: none;
+        font-weight: 600;
+        box-shadow: 0 6px 18px rgba(0,255,136,0.08);
+    }
+
+    .btn-outline {
+        border: 2px solid #00ff88;
+        color: #00ff88;
+        padding: 10px 18px;
+        border-radius: 28px;
+        text-decoration: none;
+        background: transparent;
+        font-weight: 600;
+    }
+
+    .scroll-top-btn {
+        position: fixed;
+        right: 28px;
+        bottom: 28px;
+        background: #00ff88;
+        color: #0b0b0b;
+        padding: 12px;
+        border-radius: 50%;
+        cursor: pointer;
+        z-index: 999;
+    }
+
+    footer {
+        text-align: center;
+        padding: 18px 10px;
+        color: #cfd8dc;
+        background: rgba(0,0,0,0.45);
+    }
+
+    /* Responsive: on small screens center the hero content and reduce spacing */
+    @media (max-width: 900px) {
+        .hero-section {
+            justify-content: center;
+            padding: 36px 18px;
+        }
+        .hero-section .intro {
+            margin-left: 0;
+            max-width: 92%;
+            text-align: center;
+            background: rgba(0,0,0,0.25);
+        }
+        .hero-section .intro h1 {
+            font-size: 2.4rem;
+        }
+    }
+
+    @media (max-width: 480px) {
+        .hero-section .intro {
+            padding: 14px;
+        }
+        .hero-section .intro h1 {
+            font-size: 2rem;
+        }
+        .hero-section .intro p {
+            font-size: 0.98rem;
+        }
+    }
+</style>
+
 <div class="hero-section">
     <div class="intro">
         <h1>Hi, I'm <span id="bruteforce-name">CHAND</span></h1>
@@ -73,7 +198,3 @@ Being part of the free internet community, I specialize in creating VPN tunnels,
     });
 </script>
 {% endblock %}
-
-
-
-
