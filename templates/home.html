@@ -4,30 +4,72 @@
 
 {% block content %}
   <style>
-    .hero-section .intro p {
-      text-align: justify;
-      text-justify: inter-word;
+    .hero-section {
+      position: relative;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      color: #fff;
+    }
+
+    .hero-section h1 {
+      font-size: 3rem;
+      margin: 0;
+    }
+
+    .details-section {
+      padding: 80px 0;
+      color: #fff;
+    }
+
+    .details-wrapper {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 20px;
+      padding: 0 20px;
+    }
+
+    .details-wrapper p {
+      max-width: 100%;
+      text-align: center;
+    }
+
+    @media (min-width: 768px) {
+      .details-wrapper {
+        flex-direction: row;
+        justify-content: space-between;
+      }
+
+      .details-wrapper p {
+        max-width: 40%;
+        text-align: left;
+      }
     }
   </style>
 
   <div class="hero-section">
-    <div class="intro">
-      <h1>Hi, I'm <span id="bruteforce-name">CHAND</span></h1>
-      <div style="display: flex; justify-content: space-between; align-items: center;">
-        <p style="max-width: 40%; text-align: left;">
-          A tech enthusiast and adventure lover from India.<br>
-          I thrive on exploring new trails and tinkering with technology to solve problems and make life better.
-        </p>
-        <p style="max-width: 40%; text-align: left;">
-          Being part of the free internet community, I specialize in creating VPN tunnels, routing internet through VPS and utilizing CDN hosts like Apache, Bunny, Fastly, Nginx, Cloudflare, Cloudfront, Google, and Microsoft. I also love helping others access unlimited free internet.<br>
-          Fun Fact: "Life's a journey—whether it's trekking through mountains or exploring the depths of the internet."
-        </p>
-      </div>
-      <br>
-      <div class="buttons">
-        <a href="/projects" class="btn">View Projects</a>
-        <a href="/contact" class="btn-outline">Get in Touch</a>
-      </div>
+    <h1>Hi, I'm <span id="bruteforce-name">CHAND</span></h1>
+  </div>
+
+  <div class="details-section">
+    <div class="details-wrapper">
+      <p>
+        A tech enthusiast and adventure lover from India.<br>
+        I thrive on exploring new trails and tinkering with technology to solve problems and make life better.
+      </p>
+      <p>
+        Being part of the free internet community, I specialize in creating VPN tunnels, routing internet through VPS and utilizing CDN hosts like Apache, Bunny, Fastly, Nginx, Cloudflare, Cloudfront, Google, and Microsoft. I also love helping others access unlimited free internet.<br>
+        Fun Fact: "Life's a journey—whether it's trekking through mountains or exploring the depths of the internet."
+      </p>
+    </div>
+    <br>
+    <div class="buttons" style="display: flex; justify-content: center; gap: 20px;">
+      <a href="/projects" class="btn">View Projects</a>
+      <a href="/contact" class="btn-outline">Get in Touch</a>
     </div>
   </div>
 
