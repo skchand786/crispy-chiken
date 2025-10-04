@@ -1,256 +1,81 @@
-{% extends "base.html" %}
+{% extends "base.html" %}    
 
 {% block title %}Home - My Professional Portfolio{% endblock %}
 
 {% block content %}
-  <style>
-    /* Reset & Base Styles */
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-
-    body {
-      font-family: 'Inter', sans-serif;
-      background-color: #ffffff;
-      color: #1a1a1a;
-      line-height: 1.6;
-    }
-
-    /* Hero Section */
-    .hero-section {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100vh;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      flex-direction: column;
-      z-index: 1000;
-      background: #ffffff;
-      overflow: hidden;
-    }
-
-    .hero-section h1 {
-      font-size: 3rem;
-      margin: 0;
-      font-weight: 700;
-      color: #1a1a1a;
-      text-align: center;
-      animation: fadeInUp 1s ease-out;
-    }
-
-    @keyframes fadeInUp {
-      from {
-        opacity: 0;
-        transform: translateY(20px);
-      }
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
-    }
-
-    /* Details Section */
-    .details-section {
-      padding-top: 100vh;
-      max-width: 800px;
-      margin: 0 auto;
-      padding: 40px 20px;
-      text-align: center;
-    }
-
-    .details-wrapper {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      gap: 20px;
-    }
-
-    .text-left,
-    .text-right {
-      max-width: 45%;
-      text-align: left;
-      font-size: 1.1rem;
-      opacity: 0.9;
-      animation: fadeInUp 1s ease-out;
-    }
-
-    .text-left {
-      animation-delay: 0.3s;
-    }
-
-    .text-right {
-      animation-delay: 0.6s;
-    }
-
-    @media (max-width: 768px) {
-      .text-left,
-      .text-right {
-        max-width: 100%;
-        text-align: center;
-      }
-    }
-
-    /* Buttons */
-    .buttons {
-      display: flex;
-      justify-content: center;
-      gap: 20px;
-      margin-top: 40px;
-    }
-
-    .btn {
-      padding: 12px 28px;
-      border-radius: 50px;
-      background-color: transparent;
-      color: #00ff88;
-      text-decoration: none;
-      font-weight: bold;
-      border: 2px solid #00ff88;
-      transition: all 0.3s ease;
-      cursor: pointer;
-      font-size: 1rem;
-    }
-
-    .btn:hover {
-      background-color: rgba(0, 255, 136, 0.1);
-      transform: translateY(-3px);
-    }
-
-    .btn-outline {
-      padding: 12px 28px;
-      border-radius: 50px;
-      background-color: transparent;
-      color: #1a1a1a;
-      text-decoration: none;
-      font-weight: bold;
-      border: 2px solid #1a1a1a;
-      transition: all 0.3s ease;
-    }
-
-    .btn-outline:hover {
-      background-color: rgba(0, 0, 0, 0.05);
-      transform: translateY(-3px);
-    }
-
-    /* Scroll to Top Button */
-    .scroll-top-btn {
-      position: fixed;
-      bottom: 30px;
-      right: 30px;
-      width: 50px;
-      height: 50px;
-      border-radius: 50%;
-      background-color: rgba(0, 255, 136, 0.1);
-      color: #00ff88;
-      font-size: 1.5rem;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      cursor: pointer;
-      transition: all 0.3s ease;
-      z-index: 1001;
-    }
-
-    .scroll-top-btn:hover {
-      background-color: rgba(0, 255, 136, 0.2);
-      transform: scale(1.1);
-    }
-
-    /* Footer */
-    footer {
-      text-align: center;
-      padding: 20px;
-      color: #666;
-      font-size: 0.9rem;
-    }
-
-    /* Bruteforce Animation */
-    #bruteforce-name {
-      color: #00ff88;
-      font-weight: 700;
-      font-family: monospace;
-    }
-  </style>
-
-  <!-- Hero Section -->
-  <div class="hero-section">
-    <h1>Hi, I'm <span id="bruteforce-name">CHAND</span></h1>
-  </div>
-
-  <!-- Details Section -->
-  <div class="details-section">
-    <div class="details-wrapper">
-      <div class="text-left">
-        <p>
-          A tech enthusiast and adventure lover from India.<br>
-          I thrive on exploring new trails and tinkering with technology to solve problems and make life better.
-        </p>
-      </div>
-      <div class="text-right">
-        <p>
-          Being part of the free internet community, I specialize in creating VPN tunnels, routing internet through VPS and utilizing CDN hosts like Apache, Bunny, Fastly, Nginx, Cloudflare, Cloudfront, Google, and Microsoft. I also love helping others access unlimited free internet.<br>
-          Fun Fact: "Life's a journey—whether it's trekking through mountains or exploring the depths of the internet."
-        </p>
-      </div>
+<div class="hero-section">
+    <div class="intro">
+        <h1>Hi, I'm <span id="bruteforce-name">CHAND</span></h1>
+        <p> A tech enthusiast and adventure lover from India.
+</p>
+        <br>
+        <div class="buttons">
+            <a href="/projects" class="btn">View Projects</a>
+            <a href="/contact" class="btn-outline">Get in Touch</a>
+        </div>
     </div>
+</div>
 
-    <!-- Buttons -->
-    <div class="buttons">
-      <a href="/projects" class="btn">View Projects</a>
-      <a href="/contact" class="btn-outline">Get in Touch</a>
-    </div>
-  </div>
+<!-- Scroll to Top Button -->
+<div class="scroll-top-btn" onclick="scrollToTop()">↑</div>
 
-  <!-- Scroll to Top Button -->
-  <div class="scroll-top-btn" onclick="scrollToTop()">↑</div>
-
-  <!-- Footer -->
-  <footer>
+<!-- Footer -->
+<footer>
     <p>Coded by <span>Chand</span> using <span>Flask & Python</span></p>
-  </footer>
+    <p></p>
+</footer>
 
-  <!-- Scripts -->
-  <script>
+<!-- Scroll to Top Script -->
+<script>
     function scrollToTop() {
-      window.scrollTo({ top: 0, behavior: 'smooth' });
+        window.scrollTo({ top: 0, behavior: 'smooth' });
     }
 
     document.addEventListener("DOMContentLoaded", function() {
-      // Bruteforce Name Animation
-      const targetText = "CHAND";
-      const nameElement = document.getElementById("bruteforce-name");
-      const totalDuration = 1000;
-      const intervalDuration = 30;
-      const steps = totalDuration / intervalDuration;
-      let step = 0;
+        // Bruteforce Name Animation (fast hacker effect)
+        const targetText = "CHAND";
+        const nameElement = document.getElementById("bruteforce-name");
+        const totalDuration = 1000; // 1 second
+        const intervalDuration = 30; // Faster updates for hacker effect
+        const steps = totalDuration / intervalDuration; // Number of steps to complete in 1 second
+        let step = 0;
 
-      function randomChar() {
-        const chars = "!@#$%^&*()_+{}|:?><~ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
-        return chars[Math.floor(Math.random() * chars.length)];
-      }
-
-      function updateText() {
-        let displayText = "";
-        for (let i = 0; i < targetText.length; i++) {
-          displayText += (step / steps > Math.random()) ? targetText[i] : randomChar();
+        function randomChar() {
+            const chars = "!@#$%^&*()_+{}|:?><~ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
+            return chars[Math.floor(Math.random() * chars.length)];
         }
-        nameElement.textContent = displayText;
 
-        if (step < steps) {
-          step++;
-          setTimeout(updateText, intervalDuration);
-        } else {
-          nameElement.textContent = targetText;
-          nameElement.style.transition = "color 0.3s ease";
-          nameElement.style.color = "#00ff88";
+        function updateText() {
+            let displayText = "";
+            for (let i = 0; i < targetText.length; i++) {
+                if (step / steps > Math.random()) {
+                    displayText += targetText[i];
+                } else {
+                    displayText += randomChar();
+                }
+            }
+            nameElement.textContent = displayText;
+
+            if (step < steps) {
+                step++;
+                setTimeout(updateText, intervalDuration);
+            } else {
+                nameElement.textContent = targetText; // Ensure the final text is correct
+                nameElement.style.transition = "color 0.3s ease"; // Add a final effect
+                nameElement.style.color = "#00ff88"; // Change to a hacker-style green color
+            }
         }
-      }
-      updateText();
+
+        updateText();
     });
-  </script>
+</script>
 {% endblock %}
+
+
+
+
+
+
+
+
+
