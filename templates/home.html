@@ -1,17 +1,20 @@
-{% extends "base.html" %}    
+{% extends "base.html" %}
 
 {% block title %}Home - My Professional Portfolio{% endblock %}
 
 {% block content %}
 <div class="hero-section">
     <div class="intro">
-        <h1>Hi, I'm <span id="bruteforce-name">CHAND</span></h1>
-        <p> A tech enthusiast and adventure lover from India.
-</p>
-        <br>
-        <div class="buttons">
-            <a href="/projects" class="btn">View Projects</a>
-            <a href="/contact" class="btn-outline">Get in Touch</a>
+        <div style="display: flex; justify-content: space-between; align-items: center;">
+            <h1>Hi, I'm <span id="bruteforce-name">CHAND</span></h1>
+            <div>
+                <p> A tech enthusiast and adventure lover from India.
+                </p>
+                <div class="buttons">
+                    <a href="/projects" class="btn">View Projects</a>
+                    <a href="/contact" class="btn-outline">Get in Touch</a>
+                </div>
+            </div>
         </div>
     </div>
 </div>
@@ -70,12 +73,3 @@
     });
 </script>
 {% endblock %}
-
-
-
-
-
-
-
-
-
