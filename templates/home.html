@@ -3,9 +3,47 @@
 {% block title %}Home - My Professional Portfolio{% endblock %}
 
 {% block content %}
+<style>
+    /* Keep hero relative so we can absolutely position the heading into the empty top area */
+    .hero-section {
+        position: relative;
+        /* existing styles from base.css should still apply (background image, height, etc.) */
+    }
+
+    /* Place the H1 into the top empty area */
+    .hero-section .intro > div h1 {
+        position: absolute;
+        top: 8vh;                 /* adjust this value to move the heading up/down */
+        left: 50%;
+        transform: translateX(-50%);
+        margin: 0;
+        z-index: 5;               /* keep it above background but below nav if needed */
+        white-space: nowrap;      /* prevents line break (remove if you want wrapping) */
+    }
+
+    /* Ensure the rest of the intro content doesn't sit under the absolutely positioned h1 */
+    .hero-section .intro > div {
+        /* give vertical padding so description/buttons sit below the absolutely positioned heading */
+        padding-top: 18vh;        /* adjust if heading overlaps other elements */
+    }
+
+    /* responsive tweak: on small screens place heading back in flow */
+    @media (max-width: 700px) {
+        .hero-section .intro > div h1 {
+            position: static;
+            transform: none;
+            text-align: center;
+            white-space: normal;
+        }
+        .hero-section .intro > div {
+            padding-top: 0;
+        }
+    }
+</style>
+
 <div class="hero-section">
     <div class="intro">
-        <div style="display: flex; flex-direction: column; align-items: flex-start;">
+        <div style="display: flex; justify-content: space-between; align-items: center;">
             <h1>Hi, I'm <span id="bruteforce-name">CHAND</span></h1>
             <div>
                 <p>A tech enthusiast and adventure lover from India.</p>
