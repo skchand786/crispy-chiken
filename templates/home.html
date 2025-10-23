@@ -3,107 +3,17 @@
 {% block title %}Home - My Professional Portfolio{% endblock %}
 
 {% block content %}
-<style>
-    /* Basic styles to ensure the hero content stacks vertically and centers */
-    .hero-section {
-        /* background image / height may be set in base.css or inline elsewhere */
-        padding: 80px 20px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-    }
-
-    .intro {
-        max-width: 1100px;
-        width: 100%;
-        text-align: center; /* center align the text */
-        color: #fff;
-        /* optional backdrop for readability if background is busy */
-        /* background: rgba(0,0,0,0.2); padding: 30px; border-radius: 8px; */
-    }
-
-    .intro h1 {
-        font-size: 64px;
-        margin: 0 0 12px 0;
-        font-weight: 800;
-    }
-
-    #bruteforce-name {
-        color: #00ffd0; /* fallback color before animation changes it */
-        -webkit-text-stroke: 0.5px rgba(0,0,0,0.15);
-    }
-
-    .intro p {
-        font-size: 20px;
-        margin: 0 0 22px 0;
-        opacity: 0.95;
-    }
-
-    .buttons {
-        display: inline-flex;
-        gap: 16px;
-        align-items: center;
-        justify-content: center;
-    }
-
-    .btn, .btn-outline {
-        padding: 12px 24px;
-        border-radius: 999px;
-        text-decoration: none;
-        font-weight: 600;
-        transition: transform 0.15s ease, box-shadow 0.15s ease;
-    }
-
-    .btn {
-        background: linear-gradient(90deg,#00e686,#00c2ff);
-        color: #0b1320;
-        border: none;
-        box-shadow: 0 6px 18px rgba(0,198,150,0.18);
-    }
-
-    .btn:hover { transform: translateY(-3px); }
-
-    .btn-outline {
-        background: transparent;
-        color: #00e686;
-        border: 2px solid rgba(0,198,150,0.85);
-    }
-
-    .btn-outline:hover { transform: translateY(-3px); box-shadow: 0 6px 18px rgba(0,198,150,0.08); }
-
-    /* Scroll-to-top button minimal styling */
-    .scroll-top-btn {
-        position: fixed;
-        right: 20px;
-        bottom: 20px;
-        background: #00e686;
-        color: #042028;
-        padding: 10px 12px;
-        border-radius: 50%;
-        cursor: pointer;
-        box-shadow: 0 6px 18px rgba(0,0,0,0.2);
-        z-index: 999;
-    }
-
-    footer {
-        text-align: center;
-        padding: 24px 12px;
-        color: #cfeee6;
-        font-size: 14px;
-    }
-</style>
-
 <div class="hero-section">
     <div class="intro">
-        <!-- Stacked & centered layout: heading on top, description below -->
-        <h1>Hi, I'm <span id="bruteforce-name">CHAND</span></h1>
-
-        <!-- This line will now appear below the heading, not to the side -->
-        <p>A tech enthusiast and adventure lover from India.</p>
-
-        <div class="buttons">
-            <a href="/projects" class="btn">View Projects</a>
-            <a href="/contact" class="btn-outline">Get in Touch</a>
+        <div style="display: flex; flex-direction: column; align-items: flex-start;">
+            <h1>Hi, I'm <span id="bruteforce-name">CHAND</span></h1>
+            <div>
+                <p>A tech enthusiast and adventure lover from India.</p>
+                <div class="buttons">
+                    <a href="/projects" class="btn">View Projects</a>
+                    <a href="/contact" class="btn-outline">Get in Touch</a>
+                </div>
+            </div>
         </div>
     </div>
 </div>
@@ -117,7 +27,7 @@
     <p></p>
 </footer>
 
-<!-- Scroll to Top Script & Bruteforce Animation -->
+<!-- Scroll to Top Script -->
 <script>
     function scrollToTop() {
         window.scrollTo({ top: 0, behavior: 'smooth' });
@@ -129,7 +39,7 @@
         const nameElement = document.getElementById("bruteforce-name");
         const totalDuration = 1000; // 1 second
         const intervalDuration = 30; // Faster updates for hacker effect
-        const steps = Math.max(1, Math.floor(totalDuration / intervalDuration)); // ensure integer steps
+        const steps = totalDuration / intervalDuration; // Number of steps to complete in 1 second
         let step = 0;
 
         function randomChar() {
@@ -140,8 +50,7 @@
         function updateText() {
             let displayText = "";
             for (let i = 0; i < targetText.length; i++) {
-                // probabilistic reveal across steps
-                if ((step / steps) > Math.random()) {
+                if (step / steps > Math.random()) {
                     displayText += targetText[i];
                 } else {
                     displayText += randomChar();
@@ -153,9 +62,9 @@
                 step++;
                 setTimeout(updateText, intervalDuration);
             } else {
-                nameElement.textContent = targetText; // ensure final text is correct
-                nameElement.style.transition = "color 0.3s ease";
-                nameElement.style.color = "#00ff88"; // final hacker-style green color
+                nameElement.textContent = targetText; // Ensure the final text is correct
+                nameElement.style.transition = "color 0.3s ease"; // Add a final effect
+                nameElement.style.color = "#00ff88"; // Change to a hacker-style green color
             }
         }
 
